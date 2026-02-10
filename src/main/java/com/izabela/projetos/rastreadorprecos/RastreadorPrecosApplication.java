@@ -19,7 +19,7 @@ public class RastreadorPrecosApplication {
     @Bean
     public CommandLineRunner run(ScraperService scraperService) {
         return args -> {
-            // Mesma URL para manter a consistência do sistema
+
             String url = "https://www.amazon.com.br/dp/8576082675";
 
             System.out.println("--- Iniciando Teste de Conexão (Amazon) ---");
