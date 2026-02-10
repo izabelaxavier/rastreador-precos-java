@@ -46,6 +46,14 @@ Agora é possível visualizar a tabela de preços via navegador enquanto o siste
 - **JDBC URL**: `jdbc:h2:mem:testdb`
 - **User**: `sa`
 
+## 🚀 Diário de Evolução: Parte 3 - Inteligência de Persistência (10/02/2026)
+Implementação de lógica para evitar redundância de dados no histórico.
+
+### ✅ O que foi implementado:
+* **Comparação de Estado**: O sistema agora consulta o último preço registrado no banco antes de realizar um novo `save`.
+* **Otimização de Armazenamento**: Registros só são criados se houver alteração no valor do produto, economizando recursos do banco de dados.
+* **Query Customizada**: Uso de `findFirstByOrderByDataConsultaDesc` no Repository para capturar o estado mais recente do produto.
+
 ---
 
 ---
