@@ -31,5 +31,22 @@ Durante o desenvolvimento, foram aplicadas técnicas de **Header Spoofing** (Use
 3. Execute a classe `RastreadorPrecosApplication`.
 4. Acompanhe o monitoramento pelo console ou pelo arquivo de logs na pasta `util`.
 
+## 🚀 Diário de Evolução: Parte 2 - Persistência com Spring Data JPA (10/02/2026)
+Nesta fase, o projeto deixou de ser apenas um monitor temporário e passou a salvar o histórico de capturas de forma permanente.
+
+### ✅ O que foi implementado hoje:
+* **Mapeamento JPA**: Transformação da classe `Produto` em uma entidade gerenciada pelo banco de dados.
+* **Spring Data JPA**: Criação do `ProdutoRepository` para salvar as informações de preço e horário automaticamente.
+* **Banco de Dados H2**: Configuração de um banco em memória para auditoria rápida e visualização das tabelas.
+* **Integração Scraper + DB**: O serviço de captura agora injeta o repositório e persiste cada dado extraído com sucesso.
+
+### 🔍 Monitoramento do Banco
+Agora é possível visualizar a tabela de preços via navegador enquanto o sistema roda:
+- **URL**: `http://localhost:8080/h2-console`
+- **JDBC URL**: `jdbc:h2:mem:testdb`
+- **User**: `sa`
+
+---
+
 ---
 *Projeto desenvolvido por Izabela Xavier como parte dos estudos em Análise e Desenvolvimento de Sistemas.*
